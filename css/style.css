@@ -236,8 +236,10 @@ ul { list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(135deg, #0D1B5E 0%, #132073 50%, #0D1B5E 100%);
+  background-image: url('../assets/hero.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 /* Moroccan geometric pattern overlay */
 .hero-bg::before {
@@ -257,7 +259,7 @@ ul { list-style: none; }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 60%, rgba(15,25,35,.5) 100%);
+  background: linear-gradient(135deg, rgba(13,27,94,.82) 0%, rgba(19,32,115,.70) 60%, rgba(13,27,94,.60) 100%);
 }
 .hero-content {
   position: relative;
