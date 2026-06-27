@@ -236,11 +236,7 @@ ul { list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/hero.jpg');
-  background-size: 100% auto;
-  background-position: center top;
-  background-color: #0D1B5E;
-  background-repeat: no-repeat;
+  background: linear-gradient(135deg, #0D1B5E 0%, #132073 50%, #0D1B5E 100%);
 }
 /* Moroccan geometric pattern overlay */
 .hero-bg::before {
@@ -358,16 +354,13 @@ ul { list-style: none; }
   border-radius: var(--radius);
   overflow: visible;
 }
-.about-img-placeholder {
+.about-img {
   width: 100%;
   aspect-ratio: 4/5;
-  background: linear-gradient(135deg, var(--dark-2) 0%, var(--green) 100%);
+  object-fit: cover;
+  object-position: center;
   border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 6rem;
-  color: rgba(255,255,255,.15);
+  display: block;
 }
 .about-badge-float {
   position: absolute;
