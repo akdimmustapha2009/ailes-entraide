@@ -481,6 +481,40 @@ ul { list-style: none; }
 
 
 /* ============================================================
+   PROJET PHARE
+   ============================================================ */
+.featured-project {
+  padding: 120px 0;
+  background: var(--bg-2);
+}
+.featured-project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.fp-image {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.fp-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+.fp-image:hover img { transform: scale(1.04); }
+.fp-content { display: flex; flex-direction: column; gap: 20px; }
+.fp-content .btn-primary { align-self: flex-start; }
+
+@media (max-width: 860px) {
+  .featured-project-grid { grid-template-columns: 1fr; gap: 40px; }
+  .fp-image img { height: 280px; }
+}
+
+/* ============================================================
    NOS ACTIONS
    ============================================================ */
 .actions {
