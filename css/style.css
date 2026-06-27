@@ -773,6 +773,167 @@ ul { list-style: none; }
 
 
 /* ============================================================
+   PODCAST
+   ============================================================ */
+.podcast {
+  padding: 120px 0;
+  background: var(--bg-2);
+}
+.podcast-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 56px;
+}
+.podcast-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.05);
+  transition: var(--transition);
+}
+.podcast-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.pod-cover {
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: rgba(255,255,255,.25);
+}
+.pod-ep {
+  position: absolute;
+  top: 14px; left: 16px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,.2);
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 50px;
+  backdrop-filter: blur(6px);
+}
+.pod-content {
+  padding: 24px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pod-tag {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  background: rgba(245,196,0,.12);
+  padding: 4px 12px;
+  border-radius: 50px;
+  align-self: flex-start;
+}
+.pod-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.4;
+}
+.pod-content p {
+  font-size: .88rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+.pod-meta {
+  display: flex;
+  gap: 16px;
+  font-size: .8rem;
+  color: var(--text-light);
+}
+.pod-meta i { color: var(--gold-dark); margin-right: 4px; }
+.pod-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.pod-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--dark), var(--dark-2));
+  color: var(--white);
+  font-size: .85rem;
+  font-weight: 600;
+  padding: 9px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.pod-play-btn:hover {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  transform: scale(1.04);
+}
+.pod-platforms {
+  display: flex;
+  gap: 8px;
+}
+.pod-platform {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: var(--bg-2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+.pod-platform:hover { background: var(--dark); color: var(--white); }
+
+/* Platforms CTA */
+.podcast-cta {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+.podcast-cta p {
+  font-size: .95rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+.podcast-platforms-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.platform-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .88rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 50px;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+.platform-btn.spotify { background: #1DB954; color: var(--white); }
+.platform-btn.apple   { background: #FC3C44; color: var(--white); }
+.platform-btn.youtube { background: #FF0000; color: var(--white); }
+.platform-btn.deezer  { background: #A238FF; color: var(--white); }
+.platform-btn:hover   { transform: translateY(-3px); box-shadow: var(--shadow-md); opacity: .9; }
+
+@media (max-width: 1100px) { .podcast-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .podcast-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
    SUPPORT
    ============================================================ */
 .support {
