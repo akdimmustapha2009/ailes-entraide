@@ -237,8 +237,9 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background-image: url('../assets/hero.jpg');
-  background-size: cover;
-  background-position: center top;
+  background-size: contain;
+  background-position: center center;
+  background-color: #0D1B5E;
   background-repeat: no-repeat;
 }
 /* Moroccan geometric pattern overlay */
