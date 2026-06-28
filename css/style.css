@@ -1146,6 +1146,108 @@ a.don-method-value:hover { text-decoration: underline; }
   color: var(--text-light);
 }
 
+/* ============================================================
+   SECTION FAIRE UN DON
+   ============================================================ */
+.don-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, var(--dark) 0%, #1565C0 100%);
+}
+.don-section .section-tag { color: var(--gold); }
+.don-section .section-title { color: var(--white); }
+.don-section .section-subtitle { color: rgba(255,255,255,.75); }
+
+.don-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.don-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.18);
+}
+.don-card-icon {
+  width: 64px; height: 64px;
+  border-radius: 18px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem;
+  color: var(--white);
+}
+.paypal-bg { background: #0070ba; }
+.bank-bg   { background: linear-gradient(135deg, var(--dark), #1565C0); }
+
+.don-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+.don-card > p {
+  font-size: .95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+.don-card-info {
+  font-size: .9rem;
+  font-weight: 600;
+  color: #0070ba;
+  background: rgba(0,112,186,.08);
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,112,186,.2);
+}
+.don-btn {
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+/* Détails bancaires */
+.don-bank-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--bg-2);
+  border-radius: 12px;
+  padding: 18px 20px;
+  border: 1px solid rgba(0,0,0,.06);
+}
+.don-bank-row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.don-bank-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  min-width: 72px;
+}
+.don-bank-val {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--dark);
+  word-break: break-all;
+}
+
+@media (max-width: 700px) {
+  .don-cards { grid-template-columns: 1fr; }
+  .don-card  { padding: 28px 22px; }
+}
+
 .share-icons {
   display: flex;
   gap: 10px;
