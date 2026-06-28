@@ -40,7 +40,7 @@ function animateCounter(el) {
 }
 
 const counters = document.querySelectorAll('.stat-number, .impact-number');
-const observer = new IntersectionObserver(entries => {
+const counterObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting && !entry.target.dataset.animated) {
       entry.target.dataset.animated = 'true';
@@ -48,7 +48,7 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.5 });
-counters.forEach(c => observer.observe(c));
+counters.forEach(c => counterObserver.observe(c));
 
 // --- Back to top ---
 document.getElementById('backToTop').addEventListener('click', () => {
@@ -82,25 +82,95 @@ document.querySelectorAll('.don-amount-btn').forEach(btn => {
   });
 });
 
-// --- Scroll-reveal on sections ---
-const revealEls = document.querySelectorAll(
-  '.mission-card, .impact-card, .support-card, .social-card, .value-item'
-);
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
+// ============================================================
+//  SCROLL ANIMATIONS
+// ============================================================
+
+// Définit les variantes d'animation disponibles
+const animVariants = {
+  'fade-up':    { from: 'opacity:0;transform:translateY(40px)',  to: 'opacity:1;transform:translateY(0)' },
+  'fade-down':  { from: 'opacity:0;transform:translateY(-40px)', to: 'opacity:1;transform:translateY(0)' },
+  'fade-left':  { from: 'opacity:0;transform:translateX(-50px)', to: 'opacity:1;transform:translateX(0)' },
+  'fade-right': { from: 'opacity:0;transform:translateX(50px)',  to: 'opacity:1;transform:translateX(0)' },
+  'zoom-in':    { from: 'opacity:0;transform:scale(0.85)',        to: 'opacity:1;transform:scale(1)' },
+  'flip-up':    { from: 'opacity:0;transform:rotateX(20deg) translateY(30px)', to: 'opacity:1;transform:rotateX(0) translateY(0)' },
+};
+
+function applyFrom(el, variant) {
+  variant.from.split(';').forEach(rule => {
+    const [prop, val] = rule.split(':');
+    el.style[prop.trim().replace(/-([a-z])/g, (_, l) => l.toUpperCase())] = val.trim();
+  });
+}
+function applyTo(el, variant) {
+  variant.to.split(';').forEach(rule => {
+    const [prop, val] = rule.split(':');
+    el.style[prop.trim().replace(/-([a-z])/g, (_, l) => l.toUpperCase())] = val.trim();
+  });
+}
+
+// Éléments à animer et leur variante
+const animTargets = [
+  // Sections entières (titre + tag)
+  { sel: '.section-header',        anim: 'fade-up',    delay: 0 },
+
+  // À propos
+  { sel: '.about-visual',          anim: 'fade-left',  delay: 0 },
+  { sel: '.about-text',            anim: 'fade-right', delay: 100 },
+  { sel: '.value-item',            anim: 'fade-up',    delay: 80, stagger: true },
+
+  // Équipe
+  { sel: '.team-card',             anim: 'zoom-in',    delay: 100, stagger: true },
+
+  // Mission cards
+  { sel: '.mission-card',          anim: 'fade-up',    delay: 80,  stagger: true },
+
+  // Nos actions / programmes
+  { sel: '.prog-block',            anim: 'fade-up',    delay: 100, stagger: true },
+  { sel: '.gallery-grid',          anim: 'zoom-in',    delay: 0 },
+  { sel: '.prog-cta',              anim: 'fade-up',    delay: 0 },
+
+  // Impact
+  { sel: '.impact-card',           anim: 'zoom-in',    delay: 80,  stagger: true },
+
+  // Podcast
+  { sel: '.pod-episode',           anim: 'fade-up',    delay: 70,  stagger: true },
+  { sel: '.pod-platform-card',     anim: 'zoom-in',    delay: 80,  stagger: true },
+
+  // Soutenir
+  { sel: '.support-card',          anim: 'fade-up',    delay: 80,  stagger: true },
+
+  // Don
+  { sel: '.don-form-wrap',         anim: 'fade-up',    delay: 0 },
+  { sel: '.don-autre-card',        anim: 'fade-up',    delay: 100, stagger: true },
+  { sel: '.don-sadaqa',            anim: 'zoom-in',    delay: 0 },
+
+  // Contact
+  { sel: '.contact-info',          anim: 'fade-left',  delay: 0 },
+  { sel: '.contact-form-wrap',     anim: 'fade-right', delay: 100 },
+
+  // Réseaux sociaux
+  { sel: '.social-card',           anim: 'zoom-in',    delay: 80,  stagger: true },
+];
+
+const scrollObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.revealed) {
+      entry.target.dataset.revealed = 'true';
+      const delay = +entry.target.dataset.delay || 0;
       setTimeout(() => {
-        entry.target.style.opacity  = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }, i * 80);
-      revealObserver.unobserve(entry.target);
+        entry.target.style.transition = 'opacity 0.65s cubic-bezier(.22,1,.36,1), transform 0.65s cubic-bezier(.22,1,.36,1)';
+        applyTo(entry.target, animVariants[entry.target.dataset.anim || 'fade-up']);
+      }, delay);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.12 });
 
-revealEls.forEach(el => {
-  el.style.opacity   = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = 'opacity .5s ease, transform .5s ease';
-  revealObserver.observe(el);
+animTargets.forEach(({ sel, anim, delay, stagger }) => {
+  document.querySelectorAll(sel).forEach((el, i) => {
+    el.dataset.anim  = anim;
+    el.dataset.delay = stagger ? delay * i : delay;
+    applyFrom(el, animVariants[anim]);
+    scrollObserver.observe(el);
+  });
 });
