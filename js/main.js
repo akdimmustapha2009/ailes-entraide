@@ -70,6 +70,18 @@ document.getElementById('contactForm').addEventListener('submit', e => {
   }, 3500);
 });
 
+// --- Don : sélection montant ---
+document.querySelectorAll('.don-amount-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.don-amount-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const amount = btn.dataset.amount;
+    const input = document.getElementById('donMontant');
+    if (input) input.value = amount === 'libre' ? '' : amount;
+    if (amount === 'libre' && input) input.focus();
+  });
+});
+
 // --- Scroll-reveal on sections ---
 const revealEls = document.querySelectorAll(
   '.mission-card, .impact-card, .support-card, .social-card, .value-item'

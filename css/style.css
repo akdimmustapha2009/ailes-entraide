@@ -1149,68 +1149,211 @@ a.don-method-value:hover { text-decoration: underline; }
 /* ============================================================
    SECTION FAIRE UN DON
    ============================================================ */
-.don-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, var(--dark) 0%, #1565C0 100%);
-}
-.don-section .section-tag { color: var(--gold); }
-.don-section .section-title { color: var(--white); }
-.don-section .section-subtitle { color: rgba(255,255,255,.75); }
+.don-section { background: var(--bg-2); }
 
-.don-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-  max-width: 900px;
-  margin: 0 auto;
+/* Hero */
+.don-hero {
+  background: linear-gradient(135deg, var(--dark) 0%, #1565C0 100%);
+  padding: 80px 0 60px;
+  text-align: center;
 }
-.don-card {
+.don-hero .breadcrumb { margin-bottom: 20px; }
+.don-hero .breadcrumb a { color: rgba(255,255,255,.7); }
+.don-hero .breadcrumb span { color: var(--gold); }
+.don-hero .breadcrumb i { color: rgba(255,255,255,.4); }
+.don-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.don-hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.75);
+}
+
+/* Body */
+.don-body { padding: 64px 0 100px; max-width: 860px; margin: 0 auto; }
+
+.don-intro {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+/* Étapes */
+.don-form-wrap {
   background: var(--white);
   border-radius: var(--radius);
-  padding: 40px 36px;
+  padding: 48px 44px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 56px;
+}
+.don-step {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  box-shadow: 0 8px 40px rgba(0,0,0,.18);
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  margin-top: 36px;
 }
-.don-card-icon {
-  width: 64px; height: 64px;
-  border-radius: 18px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.7rem;
+.don-step:first-child { margin-top: 0; }
+.don-step-num {
+  width: 36px; height: 36px;
+  min-width: 36px;
+  background: linear-gradient(135deg, var(--dark), #1565C0);
   color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: .95rem;
 }
-.paypal-bg { background: #0070ba; }
-.bank-bg   { background: linear-gradient(135deg, var(--dark), #1565C0); }
-
-.don-card h3 {
+.don-step h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--dark);
 }
-.don-card > p {
-  font-size: .95rem;
+
+/* Montants */
+.don-amounts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.don-amount-btn {
+  background: var(--bg-2);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 16px 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  transition: var(--transition);
+}
+.don-amount-btn:hover,
+.don-amount-btn.active {
+  border-color: var(--dark);
+  background: rgba(21,101,192,.07);
+}
+.dam-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+.dam-desc {
+  font-size: .78rem;
   color: var(--text-light);
+  line-height: 1.4;
+}
+
+/* Notice */
+.don-notice {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: rgba(245,196,0,.12);
+  border: 1px solid rgba(245,196,0,.4);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: .85rem;
+  color: var(--text);
   line-height: 1.6;
+  margin-bottom: 28px;
 }
-.don-card-info {
-  font-size: .9rem;
-  font-weight: 600;
-  color: #0070ba;
-  background: rgba(0,112,186,.08);
-  padding: 10px 16px;
-  border-radius: 8px;
-  border: 1px solid rgba(0,112,186,.2);
+.don-notice i { color: var(--gold-dark); font-size: 1rem; margin-top: 2px; }
+
+/* Formulaire */
+.don-form { display: flex; flex-direction: column; gap: 20px; }
+.don-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.don-field { display: flex; flex-direction: column; gap: 7px; }
+.don-field label { font-size: .85rem; font-weight: 600; color: var(--text); }
+.don-field label span { color: #e53935; }
+.don-field input,
+.don-field select,
+.don-field textarea {
+  border: 1.5px solid rgba(0,0,0,.12);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: .93rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color .2s;
+  outline: none;
+  resize: vertical;
 }
-.don-btn {
-  margin-top: 4px;
-  display: inline-flex;
+.don-field input:focus,
+.don-field select:focus,
+.don-field textarea:focus { border-color: #1565C0; background: var(--white); }
+
+/* Radio paiement */
+.don-radio-group { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 4px; }
+.don-radio {
+  display: flex;
   align-items: center;
-  gap: 10px;
-  justify-content: center;
-  font-size: 1rem;
+  gap: 8px;
+  cursor: pointer;
+  font-size: .93rem;
+  color: var(--text);
+  font-weight: 500;
 }
+.don-radio i { font-size: 1rem; color: var(--dark); }
+
+.don-submit-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.05rem;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+/* Autres moyens */
+.don-autres { margin-bottom: 56px; }
+.don-autres-header { text-align: center; margin-bottom: 36px; }
+.don-autres-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 10px 0 10px;
+}
+.don-autres-header p { font-size: .95rem; color: var(--text-light); }
+.don-autres-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.don-autre-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-md);
+}
+.don-autre-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+.don-autre-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+.don-autre-card > p { font-size: .9rem; color: var(--text-light); }
+.paypal-bg { background: #0070ba; }
+.bank-bg   { background: linear-gradient(135deg, var(--dark), #1565C0); }
 
 /* Détails bancaires */
 .don-bank-details {
@@ -1222,12 +1365,7 @@ a.don-method-value:hover { text-decoration: underline; }
   padding: 18px 20px;
   border: 1px solid rgba(0,0,0,.06);
 }
-.don-bank-row {
-  display: flex;
-  gap: 12px;
-  align-items: baseline;
-  flex-wrap: wrap;
-}
+.don-bank-row { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
 .don-bank-label {
   font-size: .72rem;
   font-weight: 700;
@@ -1236,16 +1374,73 @@ a.don-method-value:hover { text-decoration: underline; }
   color: var(--text-light);
   min-width: 72px;
 }
-.don-bank-val {
-  font-size: .9rem;
+.don-bank-val { font-size: .9rem; font-weight: 600; color: var(--dark); word-break: break-all; }
+
+.don-paypal-addr {
+  font-size: .95rem;
   font-weight: 600;
-  color: var(--dark);
-  word-break: break-all;
+  color: #0070ba;
+  background: rgba(0,112,186,.08);
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,112,186,.2);
+}
+.don-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  font-size: 1rem;
+  margin-top: 4px;
 }
 
-@media (max-width: 700px) {
-  .don-cards { grid-template-columns: 1fr; }
-  .don-card  { padding: 28px 22px; }
+/* Sadaqa */
+.don-sadaqa {
+  background: linear-gradient(135deg, var(--dark) 0%, #1565C0 100%);
+  border-radius: var(--radius);
+  padding: 52px 48px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.don-sadaqa-icon {
+  width: 72px; height: 72px;
+  background: rgba(255,255,255,.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  color: var(--gold);
+}
+.don-sadaqa h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.don-sadaqa p {
+  font-size: .97rem;
+  color: rgba(255,255,255,.8);
+  max-width: 580px;
+  line-height: 1.8;
+}
+.don-sadaqa-btn {
+  color: var(--white);
+  border-color: rgba(255,255,255,.4);
+  margin-top: 8px;
+}
+.don-sadaqa-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+
+@media (max-width: 860px) {
+  .don-form-wrap { padding: 32px 22px; }
+  .don-amounts { grid-template-columns: repeat(2, 1fr); }
+  .don-form-row { grid-template-columns: 1fr; }
+  .don-autres-grid { grid-template-columns: 1fr; }
+  .don-sadaqa { padding: 36px 24px; }
+}
+@media (max-width: 480px) {
+  .don-amounts { grid-template-columns: 1fr 1fr; }
 }
 
 .share-icons {

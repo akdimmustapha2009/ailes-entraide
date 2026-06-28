@@ -581,51 +581,155 @@
 
   <!-- ===== FAIRE UN DON ===== -->
   <section class="don-section" id="faire-un-don">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-tag">Soutenir l'association</p>
-        <h2 class="section-title">Faire un don</h2>
-        <p class="section-subtitle">Choisissez le moyen qui vous convient le mieux. Chaque contribution, même modeste, change une vie.</p>
-      </div>
-      <div class="don-cards">
 
-        <!-- PayPal -->
-        <div class="don-card">
-          <div class="don-card-icon paypal-bg"><i class="fa-brands fa-paypal"></i></div>
-          <h3>PayPal</h3>
-          <p>Rapide et sécurisé. Cliquez ci-dessous pour faire votre don en ligne.</p>
-          <div class="don-card-info">lesailesdelentraide59@gmail.com</div>
-          <a href="https://www.paypal.com/paypalme/lesailesdelentraide" target="_blank" rel="noopener" class="btn-primary don-btn">
-            <i class="fa-brands fa-paypal"></i> Donner via PayPal
-          </a>
+    <!-- Hero don -->
+    <div class="don-hero">
+      <div class="container">
+        <nav class="breadcrumb"><a href="#accueil">Accueil</a> <i class="fa-solid fa-chevron-right"></i> <span>Faire un don</span></nav>
+        <h2 class="don-hero-title">Votre soutien compte</h2>
+        <p class="don-hero-sub">Chaque don a un impact direct sur une vie</p>
+      </div>
+    </div>
+
+    <div class="container don-body">
+
+      <!-- Intro -->
+      <p class="don-intro">Que vous souhaitiez faire un don ponctuel ou devenir donateur régulier, votre contribution permet de financer nos programmes d'éducation, de santé, d'aide alimentaire et de soutien social.</p>
+
+      <!-- Formulaire -->
+      <div class="don-form-wrap">
+
+        <!-- Étape 1 : montant -->
+        <div class="don-step">
+          <div class="don-step-num">1</div>
+          <h3>Choisissez un montant</h3>
+        </div>
+        <div class="don-amounts">
+          <button class="don-amount-btn" data-amount="100" type="button">
+            <span class="dam-price">100 €</span>
+            <span class="dam-desc">Frais de scolarité mensuels d'un enfant</span>
+          </button>
+          <button class="don-amount-btn" data-amount="150" type="button">
+            <span class="dam-price">150 €</span>
+            <span class="dam-desc">Panier alimentaire pour une famille</span>
+          </button>
+          <button class="don-amount-btn" data-amount="200" type="button">
+            <span class="dam-price">200 €</span>
+            <span class="dam-desc">Fournitures scolaires pour un enfant</span>
+          </button>
+          <button class="don-amount-btn" data-amount="300" type="button">
+            <span class="dam-price">300 €</span>
+            <span class="dam-desc">Consultation médicale et médicaments</span>
+          </button>
+          <button class="don-amount-btn" data-amount="500" type="button">
+            <span class="dam-price">500 €</span>
+            <span class="dam-desc">Soutien complet d'un enfant pendant 1 mois</span>
+          </button>
+          <button class="don-amount-btn don-amount-libre" data-amount="libre" type="button">
+            <span class="dam-price">Libre</span>
+            <span class="dam-desc">Choisissez le montant de votre choix</span>
+          </button>
         </div>
 
-        <!-- Virement bancaire -->
-        <div class="don-card">
-          <div class="don-card-icon bank-bg"><i class="fa-solid fa-building-columns"></i></div>
-          <h3>Virement bancaire</h3>
-          <p>Effectuez un virement direct sur notre compte bancaire.</p>
-          <div class="don-bank-details">
-            <div class="don-bank-row">
-              <span class="don-bank-label">IBAN</span>
-              <span class="don-bank-val">FR76 1027 8027 4000 0507 4720 381</span>
+        <!-- Étape 2 : formulaire -->
+        <div class="don-step">
+          <div class="don-step-num">2</div>
+          <h3>Vos informations</h3>
+        </div>
+        <div class="don-notice">
+          <i class="fa-solid fa-circle-info"></i>
+          Ceci est un formulaire de démonstration. Aucun paiement n'est traité directement sur cette page — un système de paiement sécurisé sera intégré ultérieurement.
+        </div>
+        <form class="don-form" id="donForm">
+          <div class="don-form-row">
+            <div class="don-field">
+              <label>Prénom <span>*</span></label>
+              <input type="text" placeholder="Votre prénom" required />
             </div>
-            <div class="don-bank-row">
-              <span class="don-bank-label">BIC</span>
-              <span class="don-bank-val">CMCIFR2A</span>
-            </div>
-            <div class="don-bank-row">
-              <span class="don-bank-label">Banque</span>
-              <span class="don-bank-val">Crédit Mutuel — CCM Valenciennes</span>
-            </div>
-            <div class="don-bank-row">
-              <span class="don-bank-label">Titulaire</span>
-              <span class="don-bank-val">LES AILES DE L'ENTRAIDE</span>
+            <div class="don-field">
+              <label>Nom <span>*</span></label>
+              <input type="text" placeholder="Votre nom" required />
             </div>
           </div>
-        </div>
-
+          <div class="don-form-row">
+            <div class="don-field">
+              <label>Adresse e-mail <span>*</span></label>
+              <input type="email" placeholder="votre@email.com" required />
+            </div>
+            <div class="don-field">
+              <label>Téléphone</label>
+              <input type="tel" placeholder="+33 6 XX XX XX XX" />
+            </div>
+          </div>
+          <div class="don-form-row">
+            <div class="don-field">
+              <label>Montant du don (€) <span>*</span></label>
+              <input type="number" id="donMontant" placeholder="Ex : 100" min="1" required />
+            </div>
+            <div class="don-field">
+              <label>Fréquence du don</label>
+              <select>
+                <option>Don ponctuel</option>
+                <option>Don mensuel</option>
+                <option>Don annuel</option>
+              </select>
+            </div>
+          </div>
+          <div class="don-field">
+            <label>Mode de paiement souhaité</label>
+            <div class="don-radio-group">
+              <label class="don-radio"><input type="radio" name="paiement" value="paypal" checked /> <i class="fa-brands fa-paypal"></i> PayPal</label>
+              <label class="don-radio"><input type="radio" name="paiement" value="virement" /> <i class="fa-solid fa-building-columns"></i> Virement bancaire</label>
+            </div>
+          </div>
+          <div class="don-field">
+            <label>Message (facultatif)</label>
+            <textarea rows="3" placeholder="Laissez-nous un message d'encouragement ou une précision sur votre don..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary don-submit-btn">
+            <i class="fa-solid fa-heart"></i> Confirmer mon don
+          </button>
+        </form>
       </div>
+
+      <!-- Autres moyens -->
+      <div class="don-autres">
+        <div class="don-autres-header">
+          <p class="section-tag">Plusieurs façons de nous aider</p>
+          <h3>Autres moyens de soutenir</h3>
+          <p>En plus du formulaire ci-dessus, vous pouvez nous soutenir directement par les moyens suivants.</p>
+        </div>
+        <div class="don-autres-grid">
+          <div class="don-autre-card">
+            <div class="don-autre-icon bank-bg"><i class="fa-solid fa-building-columns"></i></div>
+            <h4>Virement bancaire</h4>
+            <div class="don-bank-details">
+              <div class="don-bank-row"><span class="don-bank-label">IBAN</span><span class="don-bank-val">FR76 1027 8027 4000 0507 4720 381</span></div>
+              <div class="don-bank-row"><span class="don-bank-label">BIC</span><span class="don-bank-val">CMCIFR2A</span></div>
+              <div class="don-bank-row"><span class="don-bank-label">Banque</span><span class="don-bank-val">Crédit Mutuel</span></div>
+              <div class="don-bank-row"><span class="don-bank-label">Titulaire</span><span class="don-bank-val">LES AILES DE L'ENTRAIDE</span></div>
+            </div>
+          </div>
+          <div class="don-autre-card">
+            <div class="don-autre-icon paypal-bg"><i class="fa-brands fa-paypal"></i></div>
+            <h4>PayPal</h4>
+            <p>Envoyez votre don directement à l'adresse :</p>
+            <div class="don-paypal-addr">lesailesdelentraide59@gmail.com</div>
+            <a href="https://www.paypal.com/paypalme/lesailesdelentraide" target="_blank" rel="noopener" class="btn-primary don-btn">
+              <i class="fa-brands fa-paypal"></i> Donner via PayPal
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sadaqa -->
+      <div class="don-sadaqa">
+        <div class="don-sadaqa-icon"><i class="fa-solid fa-moon"></i></div>
+        <h3>Investissez pour votre Au-delà</h3>
+        <p>Chaque sadaqa est une graine que vous semez auprès d'Allah. À travers Les Ailes de l'Entraide, votre générosité devient un repas, un sourire, une aide précieuse et une source d'espoir pour les plus fragiles.</p>
+        <a href="#soutenir" class="btn-outline don-sadaqa-btn">Participer au Kheir</a>
+      </div>
+
     </div>
   </section>
 
