@@ -1395,6 +1395,73 @@ a.don-method-value:hover { text-decoration: underline; }
   margin-top: 4px;
 }
 
+/* Remerciement */
+.don-merci {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 56px;
+}
+.don-merci-img {
+  height: 100%;
+  min-height: 340px;
+}
+.don-merci-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.don-merci-text {
+  padding: 40px 40px 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.don-merci-icon {
+  width: 56px; height: 56px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+.don-merci-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.3;
+}
+.don-merci-text p {
+  font-size: .95rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+.don-merci-quote {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--dark) !important;
+  border-left: 3px solid var(--gold);
+  padding-left: 16px;
+  margin-top: 4px;
+}
+
+@media (max-width: 860px) {
+  .don-merci { grid-template-columns: 1fr; }
+  .don-merci-img { min-height: 260px; }
+  .don-merci-text { padding: 32px 28px; }
+}
+@media (max-width: 480px) {
+  .don-merci-text { padding: 24px 20px; }
+  .don-merci-text h3 { font-size: 1.4rem; }
+}
+
 /* Sadaqa */
 .don-sadaqa {
   background: linear-gradient(135deg, var(--dark) 0%, #1565C0 100%);
