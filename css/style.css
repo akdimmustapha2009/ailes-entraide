@@ -261,7 +261,8 @@ ul { list-style: none; }
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 140px 0 100px;
+  padding-top: 140px;
+  padding-bottom: 100px;
   max-width: 720px;
 }
 .hero-badge {
@@ -1174,7 +1175,7 @@ a.don-method-value:hover { text-decoration: underline; }
 }
 
 /* Body */
-.don-body { padding: 64px 0 100px; max-width: 860px; margin: 0 auto; }
+.don-body { padding-top: 64px; padding-bottom: 100px; max-width: 860px; margin: 0 auto; }
 
 .don-intro {
   font-size: 1rem;
@@ -1766,7 +1767,7 @@ a.don-method-value:hover { text-decoration: underline; }
   .actions, .podcast, .support, .contact { padding: 80px 0; }
 
   /* Hero */
-  .hero-content  { padding: 120px 0 80px; }
+  .hero-content  { padding-top: 120px; padding-bottom: 80px; }
   .hero-stats    { gap: 24px; }
   .hero-title    { font-size: clamp(2rem, 7vw, 3.2rem); }
 
@@ -1825,7 +1826,7 @@ a.don-method-value:hover { text-decoration: underline; }
   .container { padding: 0 16px; }
 
   /* Hero */
-  .hero-content   { padding: 100px 0 60px; }
+  .hero-content   { padding-top: 100px; padding-bottom: 60px; }
   .hero-actions   { flex-direction: column; align-items: flex-start; }
   .hero-actions .btn-primary,
   .hero-actions .btn-outline { width: 100%; justify-content: center; }
@@ -1892,7 +1893,7 @@ a.don-method-value:hover { text-decoration: underline; }
   .actions-cta h3 { font-size: 1.3rem; }
   .don-hero       { padding: 60px 0 40px; }
   .don-hero-title { font-size: 1.7rem; }
-  .don-body       { padding: 40px 0 60px; }
+  .don-body       { padding-top: 40px; padding-bottom: 60px; }
   .footer         { padding-top: 48px; }
   .back-to-top    { bottom: 20px; right: 16px; width: 42px; height: 42px; }
 }
