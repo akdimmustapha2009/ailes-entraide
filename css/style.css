@@ -1399,29 +1399,31 @@ a.don-method-value:hover { text-decoration: underline; }
 .don-merci {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, var(--dark) 0%, #1565C0 100%);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  gap: 40px;
   margin-bottom: 56px;
 }
 .don-merci-img {
   width: 100%;
-  height: 340px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 .don-merci-img img {
   width: 100%;
-  height: 100%;
+  height: 420px;
   object-fit: cover;
   display: block;
 }
 .don-merci-text {
+  background: linear-gradient(135deg, var(--dark) 0%, #1565C0 100%);
+  border-radius: var(--radius);
   padding: 52px 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 20px;
+  box-shadow: var(--shadow-md);
 }
 .don-merci-icon {
   width: 72px; height: 72px;
@@ -1461,9 +1463,9 @@ a.don-method-value:hover { text-decoration: underline; }
 }
 
 @media (max-width: 600px) {
-  .don-merci-img  { height: 240px; }
-  .don-merci-text { padding: 36px 24px; }
-  .don-merci-quote { font-size: 1rem; padding: 14px 18px; }
+  .don-merci-img img { height: 260px; }
+  .don-merci-text    { padding: 36px 24px; }
+  .don-merci-quote   { font-size: 1rem; padding: 14px 18px; }
 }
 
 /* Sadaqa */
