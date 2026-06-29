@@ -1721,43 +1721,178 @@ a.don-method-value:hover { text-decoration: underline; }
 
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE — mobile-first progressive enhancement
    ============================================================ */
-@media (max-width: 1100px) {
-  .mission-grid,
-  .impact-grid,
-  .support-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid  { grid-template-columns: 1fr 1fr; }
+
+/* ── 1200px : grands laptops ── */
+@media (max-width: 1200px) {
+  .about-grid { gap: 56px; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 36px; }
 }
 
+/* ── 1024px : petits laptops / tablettes paysage ── */
+@media (max-width: 1024px) {
+  .mission-grid  { grid-template-columns: repeat(2, 1fr); }
+  .impact-grid   { grid-template-columns: repeat(2, 1fr); }
+  .support-grid  { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid   { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .gallery-grid  { grid-template-columns: repeat(3, 1fr); }
+  .team-grid     { grid-template-columns: repeat(2, 1fr); }
+  .about-grid    { gap: 40px; }
+  .contact-grid  { gap: 48px; }
+}
+
+/* ── 860px : tablette portrait ── */
 @media (max-width: 860px) {
-  .about-grid,
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .about-visual  { display: none; }
-  .social-cards  { grid-template-columns: 1fr; }
+  /* Navbar */
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
-
   .nav-links.open {
     display: flex;
     flex-direction: column;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(15,25,35,.98);
+    background: rgba(10,18,60,.97);
     align-items: center;
     justify-content: center;
-    gap: 40px;
-    z-index: 999;
+    gap: 36px;
+    z-index: 1000;
     font-size: 1.3rem;
   }
+  .logo-text { font-size: 1.1rem; }
+
+  /* Sections padding */
+  .about, .team, .mission, .impact,
+  .actions, .podcast, .support, .contact { padding: 80px 0; }
+
+  /* Hero */
+  .hero-content  { padding: 120px 0 80px; }
+  .hero-stats    { gap: 24px; }
+  .hero-title    { font-size: clamp(2rem, 7vw, 3.2rem); }
+
+  /* About : empilé, image visible */
+  .about-grid    { grid-template-columns: 1fr; gap: 40px; }
+  .about-visual  { display: block; max-width: 480px; margin: 0 auto; }
+  .about-img     { aspect-ratio: 16/9; }
+  .about-pattern { display: none; }
+
+  /* Team */
+  .team-grid     { grid-template-columns: repeat(2, 1fr); }
+
+  /* Nos actions */
+  .prog-block, .prog-block.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 32px;
+  }
+  .prog-image img, .prog-img-placeholder { height: 260px; }
+  .actions-cta   { padding: 40px 28px; }
+  .actions-cta h3 { font-size: 1.5rem; }
+
+  /* Galerie */
+  .gallery-grid  { grid-template-columns: repeat(2, 1fr); }
+
+  /* Impact */
+  .impact-grid   { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+  /* Podcast */
+  .pod-episode   { flex-direction: column; gap: 16px; }
+  .pod-platforms-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Support */
+  .support-grid  { grid-template-columns: repeat(2, 1fr); }
+
+  /* Contact */
+  .contact-grid  { grid-template-columns: 1fr; gap: 40px; }
+  .contact-form-wrap { padding: 36px 28px; }
+  .social-cards  { grid-template-columns: 1fr 1fr; }
+
+  /* Footer */
+  .footer-grid   { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .footer        { padding-top: 60px; }
+
+  /* Section header */
+  .section-header { margin-bottom: 48px; }
 }
 
+/* ── 600px : grand mobile ── */
 @media (max-width: 600px) {
+  /* Sections padding */
+  .about, .team, .mission, .impact,
+  .actions, .podcast, .support, .contact { padding: 64px 0; }
+
+  /* Container */
+  .container { padding: 0 16px; }
+
+  /* Hero */
+  .hero-content   { padding: 100px 0 60px; }
+  .hero-actions   { flex-direction: column; align-items: flex-start; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-outline { width: 100%; justify-content: center; }
+  .hero-stats     { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* Team */
+  .team-grid      { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+
+  /* Mission / Impact / Support */
   .mission-grid,
   .impact-grid,
-  .support-grid { grid-template-columns: 1fr; }
-  .footer-grid  { grid-template-columns: 1fr; }
-  .hero-stats   { gap: 24px; }
-  .form-row     { grid-template-columns: 1fr; }
-  .contact-form-wrap { padding: 32px 24px; }
+  .support-grid   { grid-template-columns: 1fr; }
+  .impact-card    { padding: 28px 20px; }
+  .impact-number  { font-size: 2.4rem; }
+
+  /* Galerie */
+  .gallery-grid   { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  /* Podcast */
+  .pod-episode    { padding: 20px 18px; }
+  .pod-ep-icon    { width: 44px; height: 44px; min-width: 44px; font-size: 1.1rem; }
+  .pod-platforms-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* Don */
+  .don-form-wrap  { padding: 28px 18px; }
+  .don-amounts    { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .don-form-row   { grid-template-columns: 1fr; }
+  .don-autres-grid { grid-template-columns: 1fr; }
+  .don-sadaqa     { padding: 36px 20px; }
+  .don-sadaqa h3  { font-size: 1.4rem; }
+
+  /* Contact */
+  .contact-form-wrap { padding: 28px 18px; }
+  .form-row       { grid-template-columns: 1fr; }
+  .social-cards   { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-grid    { grid-template-columns: 1fr; gap: 32px; }
+  .footer-brand   { text-align: center; }
+  .footer-brand .logo { justify-content: center; }
+  .footer-socials { justify-content: center; }
+
+  /* Section header */
+  .section-header { margin-bottom: 36px; }
+  .section-title  { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+}
+
+/* ── 400px : petit mobile ── */
+@media (max-width: 400px) {
+  .container      { padding: 0 12px; }
+  .logo-img       { height: 40px; }
+  .logo-text      { font-size: 1rem; }
+  .hero-badge     { font-size: .72rem; padding: 6px 12px; }
+  .hero-stats     { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .hero-stat .stat-number { font-size: 1.7rem; }
+  .hero-stat .stat-label  { font-size: .75rem; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-outline { font-size: .9rem; padding: 12px 20px; }
+  .mission-card, .support-card { padding: 28px 20px; }
+  .team-card      { padding: 28px 20px 24px; }
+  .don-amounts    { grid-template-columns: 1fr; }
+  .dam-price      { font-size: 1rem; }
+  .actions-cta    { padding: 32px 18px; }
+  .actions-cta h3 { font-size: 1.3rem; }
+  .don-hero       { padding: 60px 0 40px; }
+  .don-hero-title { font-size: 1.7rem; }
+  .don-body       { padding: 40px 0 60px; }
+  .footer         { padding-top: 48px; }
+  .back-to-top    { bottom: 20px; right: 16px; width: 42px; height: 42px; }
 }
