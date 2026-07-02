@@ -774,97 +774,118 @@ ul { list-style: none; }
 
 
 /* ============================================================
-   ÉQUIPE
+   CENTRE SOURDS & MUETS
    ============================================================ */
-.team {
+.surds {
   padding: 120px 0;
   background: var(--white);
 }
-.team-grid {
+.surds-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 28px;
+  margin-bottom: 56px;
 }
-.team-card {
+.surds-card {
   background: var(--bg);
   border-radius: var(--radius);
-  padding: 40px 28px 32px;
-  text-align: center;
-  border: 1px solid rgba(0,0,0,.05);
-  transition: var(--transition);
+  padding: 40px 32px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 16px;
+  border: 1px solid rgba(0,0,0,.05);
+  transition: var(--transition);
 }
-.team-card:hover {
+.surds-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
   border-color: transparent;
-  background: var(--white);
 }
-.team-avatar {
-  width: 100px; height: 100px;
-  border-radius: 50%;
+.surds-card-featured {
+  background: linear-gradient(135deg, var(--dark) 0%, #1565C0 100%);
+  border-color: transparent;
+}
+.surds-card-featured h3 { color: var(--white); }
+.surds-card-featured p  { color: rgba(255,255,255,.78); }
+.surds-card-featured .surds-icon {
+  background: rgba(255,255,255,.15);
+  color: var(--gold-light);
+}
+.surds-icon {
+  width: 64px; height: 64px;
+  border-radius: 18px;
+  background: rgba(245,196,0,.1);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--white);
-  font-family: 'Playfair Display', serif;
-  box-shadow: 0 8px 24px rgba(0,0,0,.18);
-  flex-shrink: 0;
+  font-size: 1.6rem;
+  color: var(--gold-dark);
 }
-.team-avatar img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-.team-info { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.team-info h3 {
+.surds-card h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--dark);
 }
-.team-role {
-  display: inline-block;
-  font-size: .78rem;
+.surds-card p {
+  font-size: .93rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  flex: 1;
+}
+.surds-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .75rem;
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--gold-dark);
   background: rgba(245,196,0,.12);
-  padding: 5px 14px;
+  padding: 6px 14px;
   border-radius: 50px;
+  align-self: flex-start;
 }
-.team-desc {
-  font-size: .88rem;
-  color: var(--text-light);
-  line-height: 1.7;
-  text-align: center;
-  margin-top: 4px;
+.surds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  background: rgba(255,255,255,.12);
+  padding: 8px 16px;
+  border-radius: 50px;
+  align-self: flex-start;
 }
-.team-socials {
+.surds-cta {
   display: flex;
-  gap: 10px;
-  margin-top: 8px;
-}
-.team-socials a {
-  width: 34px; height: 34px;
-  border-radius: 9px;
+  align-items: center;
+  gap: 20px;
   background: var(--bg-2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: .85rem;
-  color: var(--text-light);
-  transition: var(--transition);
+  border-radius: var(--radius);
+  padding: 28px 36px;
+  border: 1px solid rgba(0,0,0,.05);
+  flex-wrap: wrap;
 }
-.team-socials a:hover {
-  background: var(--dark);
-  color: var(--white);
-  transform: translateY(-2px);
+.surds-cta > i {
+  font-size: 1.8rem;
+  color: var(--gold);
+  flex-shrink: 0;
 }
+.surds-cta > p {
+  flex: 1;
+  font-size: .97rem;
+  color: var(--text);
+  font-weight: 500;
+  min-width: 200px;
+}
+.surds-cta .btn-primary { flex-shrink: 0; }
 
-@media (max-width: 860px) { .team-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } }
+@media (max-width: 860px) {
+  .surds-grid { grid-template-columns: 1fr; }
+  .surds-cta  { flex-direction: column; text-align: center; padding: 28px 24px; }
+  .surds-cta .btn-primary { width: 100%; justify-content: center; }
+}
 
 /* ============================================================
    PODCAST
