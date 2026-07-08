@@ -145,6 +145,11 @@ const animTargets = [
   { sel: '.don-autre-card',        anim: 'fade-up',    delay: 100, stagger: true },
   { sel: '.don-sadaqa',            anim: 'zoom-in',    delay: 0 },
 
+  // Vidéos
+  { sel: '.vid-featured',          anim: 'fade-up',    delay: 0 },
+  { sel: '.vid-card',              anim: 'zoom-in',    delay: 80,  stagger: true },
+  { sel: '.vid-cta',               anim: 'fade-up',    delay: 0 },
+
   // Contact
   { sel: '.contact-info',          anim: 'fade-left',  delay: 0 },
   { sel: '.contact-form-wrap',     anim: 'fade-right', delay: 100 },
