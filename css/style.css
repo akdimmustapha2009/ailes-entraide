@@ -1041,16 +1041,8 @@ ul { list-style: none; }
   border: 1px solid rgba(0,0,0,.06);
   margin-bottom: 72px;
 }
-.pod-featured-embed {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 */
-}
-.pod-featured-embed iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%; height: 100%;
-  border: none; display: block;
+.pod-thumb-wide {
+  aspect-ratio: 16 / 9 !important;
 }
 .pod-featured-info {
   padding: 32px 32px 32px 0;
