@@ -1772,6 +1772,32 @@ a.don-method-value:hover { text-decoration: underline; }
   font-size: .85rem;
   color: rgba(255,255,255,.35);
 }
+.footer-made-by {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: .78rem;
+  color: rgba(255,255,255,.3);
+  letter-spacing: .04em;
+}
+.fusion-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 2px;
+}
+.fusion-name {
+  font-weight: 700;
+  font-size: .78rem;
+  background: linear-gradient(135deg, #6C63FF, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: .1em;
+}
 
 
 /* ============================================================
