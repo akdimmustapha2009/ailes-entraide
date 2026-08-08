@@ -723,7 +723,7 @@ ul { list-style: none; }
    ============================================================ */
 .impact {
   padding: 120px 0;
-  background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 50%, #29B6F6 100%);
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 60%, var(--dark-3) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -769,7 +769,7 @@ ul { list-style: none; }
 }
 .impact-label {
   font-size: .9rem;
-  color: rgba(255,255,255,.65);
+  color: #ffffff;
   font-weight: 500;
 }
 
